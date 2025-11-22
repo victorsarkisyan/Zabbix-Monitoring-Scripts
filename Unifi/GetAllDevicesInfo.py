@@ -24,4 +24,4 @@ data = json.loads(result.stdout)
 for device in data.get('data', []):
     device_id = device.get('id')
     device_name = device.get('name')
-    print(f"Name: {device_name} - ID: {device_name}")
+    print(f"Name: {device_name} - ID: {device_id}")
