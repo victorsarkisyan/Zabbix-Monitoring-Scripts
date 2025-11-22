@@ -21,4 +21,4 @@ curl_command = [
 result = subprocess.run(curl_command, capture_output=True, text=True)
 
 data =json.loads(result.stdout)
-print(data["model"])
+print(data["name"])
