@@ -19,4 +19,4 @@ result = subprocess.run(curl_command, capture_output=True, text=True)
 
 data = json.loads(result.stdout)
 
-print(data)
+print(data['applicationVersion'])
