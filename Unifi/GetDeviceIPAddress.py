@@ -1,6 +1,7 @@
 import subprocess
 import json
 import sys
+import ipaddress
 
 api_key = sys.argv[1]
 controller_ip = sys.argv[2]
@@ -21,4 +22,6 @@ curl_command = [
 result = subprocess.run(curl_command, capture_output=True, text=True)
 
 data =json.loads(result.stdout)
-print(data["ipAddress"])
+ip_str = data["ipAddress"]
+ip_num = int(ipaddress.ip_address(ip_str))
+print(ip_num)
